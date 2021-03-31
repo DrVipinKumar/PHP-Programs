@@ -18,7 +18,7 @@ Insert Data
  {
    $hostname="localhost";
    $username="root";
-   $pwd="kiet";
+   $pwd="kiet"; 
    $dbname="wtmca1a";
    $sid=(int)$_REQUEST["sid"];
       

@@ -1,32 +1,34 @@
-<?php
-   session_start();
-   if(isset($_SESSION["checked"]) && $_SESSION["checked"]==true)
-   {
-     $name=$_SESSION["name"];
-     echo "Welcome $name";
-     function getsum($num1,$num2=12)
-   {
-      return ($num1+$num2);
-   }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <?php
+    session_start();
+    if(isset($_SESSION["validuser"]))
+    {
+    if ($_SESSION["validuser"]=="true")
+    {
+             function sum($num1,$num2=20)
+             {
+                
+                 $add=$num1+$num2;
+                echo "<br>Sum of two number=$add";
 
-   $result=getsum(23,45);
-   echo "<br>The sum of two numeber is =$result";
-   echo "<br>Sum of two number is=",getsum(67);
-   function selfMultyply(&$num1)
-   {
-       $num1=$num1*$num1;
-       echo $num1;
-   }
-   $mynum=2;
-   echo "<br>Before=",$mynum;
-   echo "<br>Return value=",selfMultyply($mynum);
-   echo "<br>After=",$mynum;
-   echo "<br><a href='statements.php'>Open Satements</a>";
-  }
-  else
-  {
-     echo "You are not valid user";
-     include("login.php");
-  }
-   
-?>
+             }
+             sum(34,56);
+             sum(567,56);
+             sum(45);
+     }
+        }
+    else
+    {
+       echo "<span style='color:red'>Kindly login first!</span>";
+       include 'login.php';
+    }
+    ?>
+</body>
+</html>

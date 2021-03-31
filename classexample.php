@@ -1,27 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <?php
-          class Student
-          {
-            public $name="Ravi";
-            function displayName()
-            {
-                echo "<br>Your name=$this->name";
-            }
+<?php
+   class Rectangle{
+         public $length;
+         public $breath;
+         function __construct($l,$b)
+         {
+            $this->length=$l;
+            $this->breath=$b;
+         }
+         function getArea()
+         {
 
-          }
-        $o1=new Student();
-        $o1->name="Rajiv";
-        $o1->displayName();
-        $o2=new Student();
-        $o2->displayName();
-        
-    ?>
-</body>
-</html>
+             return "<br>Area of rectangle is=".($this->length * $this->breath);
+         }
+
+     }
+     $r1 = new Rectangle(34,56);
+     echo $r1->getArea();
+     $r2 = new Rectangle(56,56);
+     echo $r2->getArea();
+?>

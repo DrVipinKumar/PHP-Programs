@@ -29,7 +29,8 @@ Insert Data
    $section=$_REQUEST["section"];
    $semester=$_REQUEST["semester"];
    $college=$_REQUEST["college"];
-   
+   #$iqueryd="insert into student values($sid,"+"$sname"+","+"$section"+","+"$semester"+","+"$college"+")";
+   #$iquerys='insert into student values($sid,"$sname","$section","$semester","$college")';
    $iquery="insert into student values($sid,'$sname','$section','$semester','$college')";
    $conn=new mysqli($hostname,$username,$pwd,$dbname);
    if($conn->connect_error)

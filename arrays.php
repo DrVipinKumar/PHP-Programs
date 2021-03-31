@@ -7,28 +7,29 @@
 </head>
 <body>
 <?php
-    $names=array("Ravi",true,false,"Sham","Ashok",23.45,45);//Indexed Array
-    print_r($names);
-    print "<br>".$names[0];
-    echo "<br>",$names[0];
-    foreach($names as $value)
-    {
-        echo "<br>",$value;
-    }
-    $age=array("Ravi"=>22,"Ram"=>34,"Sham"=>23,"Ashok"=>45,"kiet"=>"MCA");
+    session_start();
+    echo "Sesssion variable=".$_SESSION["name"];
+    $colors=array("Red","Green","Blue");  //Indexed Array
+    print_r($colors);
+    echo "<br>".$colors[0];
+    $age=array("Ram"=>24, "Shyam"=>45,"Ravi"=>45);
     echo "<br>";
     print_r($age);
-    echo "<br>",$age["Ravi"];
-    echo "<br>",$age[$names[0]];
-    foreach($age as $key=>$value)
-    {
-        echo "<br>",$key,"=>",$value;
-    }
-    $data=array(array(2333,444,56,6),
-                array(3,4,5,6));
     echo "<br>";
+    echo $age["Shyam"];
+    $data =array(
+        array(
+            23,45,"true","KIET"
+        ),
+        array(34,56,78,89,89)
+        );
+        echo "<br>";
     print_r($data);
-    echo "<br>",$data[0][1];
+    echo "<br>".$data[0][0],$data[1][0];
+    foreach($colors as $value)
+    {
+        echo "<br> $value";
+    }
     ?>
 </body>
 </html>

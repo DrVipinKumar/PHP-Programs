@@ -1,44 +1,25 @@
 <?php
-     class AC 
-     {
-         public $model;
-         public $name;
-         public $date;
+    class Calculator {
+        public $num1,$num2;
+        function __construct($num1,$num2)
+        {
+            $this->num1=$num1;
+            $this->num2=$num2;
+        }
 
-         function __construct($name,$model,$date)
-         {
-               $this->name=$name;
-               $this->model=$model;
-               $this->date=$date;
-         }
-         function displayACInfo()
-         {
-              echo "<br>Name=$this->name";
-              echo "<br>Model=$this->model";
-              echo "<br>Data of purchase=$this->date";
-         }
-     }
-    $ac1=new AC("LG","V03","10/10/2020");
-    $ac1->displayACInfo();
-    class SmartAC extends AC 
-     {
-            function __construct($name,$model,$date)
-            {
-                 parent::__construct($name,$model,$date);
-            }
-            public $wifi="yes";
-            public $cloud_storage="yes";
-            public $music="no";
-            function displaySmartACInfo()
-            {
-              $this->displayACInfo();
-              echo "<br>Wifi=$this->wifi";
-              echo "<br>Cloud Storage=$this->cloud_storage";
-              echo "<br>music=$this->music";
-            }
-
-     }
-     $sac1=new SmartAC("Valtas","VOL03","20/10/2020");
-     $sac1->displaySmartACInfo();
-
+    }
+    class Sum extends Calculator{
+        function __construct($num1, $num2)
+        {
+           parent::__construct($num1,$num2);
+        }
+        function getSum()
+        {
+            return "<br>Sum of two number is=".($this->num1+$this->num2);
+        }
+    }
+    $s1 = new Sum(45,56);
+    echo $s1->getSum();
+    $s2 = new Sum(4122,56);
+    echo $s2->getSum();
 ?>

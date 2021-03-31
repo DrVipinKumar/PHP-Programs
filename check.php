@@ -7,22 +7,20 @@
 </head>
 <body>
     <?php
-          
-           if(isset($_REQUEST["submit"]))
-           {
-            $name=$_REQUEST["name"];
-            $pwd=$_REQUEST["pwd"];
-            if($name=="KIET" && $pwd=="KIET")
-            {
-                header("Location:functions.php?name=$name");
-            }
-            else
-            {
-                echo "<span style='color:red'>Invalid username or password!</span>";
-                include("login.html");
-                
-            }
-           }
+        session_start();
+        $username=$_REQUEST["username"];
+        $pwd = $_REQUEST["pwd"];
+        if ($username=="KIET" && $pwd=="MCA")
+        {
+             header("Location:functions.php");
+             $_SESSION["validuser"]="true";
+        }
+        else
+        {
+            echo "<span style='color:red'>Invalid Username or Password, Try Again!</span>";
+            include 'login.php';
+            $_SESSION["validuser"]="false";
+        }
     ?>
 </body>
 </html>
